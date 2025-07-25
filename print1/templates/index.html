@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Invoice Generator</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Create Invoice</h2>
+            <form id="pdfForm">
+                <label for="customerName">Customer Name:</label>
+                <input type="text" id="customerName" required><br><br>
+
+                <label for="customerAddress">Customer Address:</label>
+                <textarea id="customerAddress" rows="2" required></textarea><br><br>
+
+                <label for="invoiceDate">Invoice Date:</label>
+                <input type="date" id="invoiceDate" required><br><br>
+
+                <label for="items">Items (Item, Quantity, Price, Total per line):</label>
+                <textarea id="items" rows="4" placeholder="Example: Product A,2,50,100" required></textarea><br><br>
+
+                <label for="totalAmount">Total Amount:</label>
+                <input type="text" id="totalAmount" required><br><br>
+
+                <button type="submit">Generate Invoice</button>
+            </form>
+        </section>
+    </main>
+    <script src="/static/script.js"></script>
+</body>
+</html>
